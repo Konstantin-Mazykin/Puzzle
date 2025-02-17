@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="puzzle">
+        <h1 class="puzzle__title">Puzzle</h1>
+        <img class="puzzle__img" src="./img/logo.jpg" alt="puzzle">
+        <p class="puzzle__text">Додайте файл з елементами пазла:</p>
+
+        <div class="puzzle__input-wrapper">
+            <input name="file" type="file" id="puzzle__input-file" class="puzzle__input-file" onchange="readFile(this)">
+            <label for="puzzle__input-file" class="puzzle__input-file-button">
+                <span class="puzzle__file-icon-wrapper">
+                    <svg class="puzzle__file-icon">
+                        <use href="./img/icons.svg#icon-download">Вибрати файл</use>
+                    </svg>
+                </span>
+                <span class="puzzle__file-button-text">Виберіть файл</span>
+            </label>
+        </div>
+        <div class="puzzle__preview"></div>
+        <button class="puzzle__button" type="button">Скласти пазл</button>
+        <p class="puzzle__result"></p>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
