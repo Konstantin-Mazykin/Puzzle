@@ -1,4 +1,5 @@
 const button = document.querySelector(".puzzle__button");
+const buttonLabel = document.querySelector(".button-label");
 const preview = document.querySelector(".puzzle__preview");
 const result = document.querySelector(".puzzle__result");
 const finishedPuzzle = document.querySelector(".puzzle__finished");
@@ -15,6 +16,7 @@ function readFile(input) {
         text = reader.result;
         render(getArray(text), preview, "Завантажено з файла", "елементів:");
         button.classList.add("show");
+        buttonLabel.classList.add("show");
     }
 }
 

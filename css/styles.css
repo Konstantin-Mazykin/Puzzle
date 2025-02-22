@@ -31,8 +31,7 @@ body {
 }
 
 .puzzle__preview,
-.puzzle__result,
-.puzzle__finishe-result {
+.puzzle__result {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -106,6 +105,17 @@ body {
 
 .puzzle__input-file-button:active {
     background-color: #106662;
+}
+
+.puzzle__button-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.button-label {
+    display: none;
 }
 
 .puzzle__button {
