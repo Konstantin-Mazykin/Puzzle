@@ -28,7 +28,7 @@ function outputResult() {
     const duplicateElements = findDuplicateElements(arrayWithoutFirstElements);
     const elementsForPuzzle = deleteElements(arrayWithoutFirstElements, duplicateElements);
     const puzzleArray = gettingLongestSequence(firstElements, duplicateElements, elementsForPuzzle);
-    render(puzzleArray, result, "Потрібна послідовність складається з", "елементів:")
+    render(puzzleArray, result, "Найдовша послідовність складається з", "елементів:")
     let puzzle = putTogetherPuzzle(puzzleArray);
     renderResult(puzzle, finishedPuzzle, "Складений пазл:")
 }
