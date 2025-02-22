@@ -30,7 +30,7 @@ function outputResult() {
     const puzzleArray = gettingLongestSequence(firstElements, duplicateElements, elementsForPuzzle);
     render(puzzleArray, result, "Найдовша послідовність складається з", "елементів:")
     let puzzle = putTogetherPuzzle(puzzleArray);
-    renderResult(puzzle, finishedPuzzle, "Складений пазл:")
+    renderResult(puzzle, finishedPuzzle, "Складений пазл складаєтся з")
 }
 
 function getArray(string) {
@@ -53,7 +53,7 @@ function render(array, htmlElement, string1, string2) {
 
 function renderResult(result, htmlElement, string) {
     let element = document.createElement("p");
-    element.insertAdjacentHTML("beforeend", `${string}`);
+    element.insertAdjacentHTML("beforeend", `${string} ${result.length} символів`);
     htmlElement.append(element);
     element = document.createElement("p");
     element.classList.add("puzzle__finishe-result");
