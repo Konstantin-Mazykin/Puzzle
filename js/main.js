@@ -140,30 +140,6 @@ function fillingArrayFromDuplicatesArray(arr, duplicates) {
             }
         }
     }
-
-    arrayLengthOptimization(arr);
-}
-
-function arrayLengthOptimization(arr) {
-    const arrStrings = new Array();
-    let maxLengthElement = 0;
-    arr.forEach(el => {
-        let string = el.join(" ");
-        if (string.length > maxLengthElement) {
-            maxLengthElement = string.length;
-        }
-        arrStrings.push(string)
-    });
-
-    const newSet = new Set(arrStrings);
-    const arrUniqueStrings = Array.from(newSet);
-
-    arr.splice(0, arr.length);
-    arrUniqueStrings.forEach(el => {
-        if (el.length > (maxLengthElement * 0.75)) {
-            arr.push(el.split(" "));
-        }
-    });
 }
 
 function fillingArrayFromUnsortedArray(arr, unsorted) {
@@ -188,6 +164,28 @@ function findLongestElementsInArray(arr) {
     return longest[indexLongestElement];
 }
 
+function arrayLengthOptimization(arr) {
+    const arrStrings = new Array();
+    let maxLengthElement = 0;
+    arr.forEach(el => {
+        let string = el.join(" ");
+        if (string.length > maxLengthElement) {
+            maxLengthElement = string.length;
+        }
+        arrStrings.push(string)
+    });
+
+    const newSet = new Set(arrStrings);
+    const arrUniqueStrings = Array.from(newSet);
+
+    arr.splice(0, arr.length);
+    arrUniqueStrings.forEach(el => {
+        if (el.length > (maxLengthElement * 0.75)) {
+            arr.push(el.split(" "));
+        }
+    });
+}
+
 function findingAllVariantsArrays(arr, double, unsorted) {
     let variants = true;
     let lengtlongestArray = 0;
@@ -195,6 +193,7 @@ function findingAllVariantsArrays(arr, double, unsorted) {
 
         fillingArrayFromUnsortedArray(arr, unsorted);
         fillingArrayFromDuplicatesArray(arr, double);
+        arrayLengthOptimization(arr);
 
         const lengtArray = findLongestElementsInArray(arr).length;
         if (lengtArray > lengtlongestArray) {
